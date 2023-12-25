@@ -1,16 +1,36 @@
-import Link from "next/link"
+"use client";
 
-export default function Header () {
-     
-    return (
-      <header className="h-20 bg-pink-200">
-          我是顶部导航栏
-          <div className="w-3/5 bg-yellow-800">
-             <Link href="/">首页</Link>
-             <Link href="/chat">聊天</Link>
-             <Link href="/chat/root">管路员</Link>
-             <Link href="/chat/user">用户</Link>
-          </div>
-      </header>
-    )
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+interface NavLinksType {
+  href: string;
+  title: string;
+}
+
+export default function Header() {
+  const pathname = usePathname();
+
+  const navLinks: NavLinksType[] = [
+    { href: "/", title: "首页" },
+    { href: "/chat", title: "聊天" },
+    { href: "/chat/root", title: "管理员" },
+    { href: "/chat/user", title: "用户" },
+  ];
+
+  return (
+    <header className="h-16 flex-shrink-0 bg-pink-200">
+      <div className="w-3/5 h-full bg-yellow-800">
+        {navLinks.map((item, key) => (
+          <Link
+            href={item.href}
+            key={key}
+            className={`h-full inline-block box-border p-5  ${pathname === item.href && "router-active"}`}
+          >
+            {item.title}
+          </Link>
+        ))}
+      </div>
+    </header>
+  );
 }

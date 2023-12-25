@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --base-theme-tgas-color : rgba(30,128,255);
+  --base-layer-fill:#f2f3f5;
+}
 html,body {
   height: 100%;
   font-size: 16px;
@@ -12,15 +16,17 @@ html,body {
   margin: 0;
 }
 
-/* .container {
-  height: 100%;
-} */
-
 ul li {
   list-style: none;
 }
 
 a {
   text-decoration: none;
+}
+
+
+/* router active */
+.router-active {
+  color: var(--base-theme-tgas-color);
 }
 
