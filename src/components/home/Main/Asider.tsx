@@ -1,6 +1,6 @@
 "use client";
 import { PiLightningFill, PiStopBold } from "react-icons/pi";
-import Button from "../common/Button";
+import Button from "../../common/Button";
 
 export default function NavBar() {
   function pot() {

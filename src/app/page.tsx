@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Asider from "@/components/home/Asider";
+import Asider from "@/components/home/Main/Asider";
 import Link from "next/link";
 
 export default function Home() {
